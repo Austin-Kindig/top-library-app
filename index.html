@@ -8,5 +8,40 @@
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1 class="title">Your Library Tracker</h1>
+      <p class="info">Fill out the form below and press "add to library" to catalog your books!</p>
+    </header>
+    <main>
+      <div class="form-container">
+        <div class="form-card">
+          <form action="">
+            <label for="title">
+              book title:  <input type="text" name="title" id="title">
+            </label>
+            <label for="author">
+              author:  <input type="text" name="title" id="title">
+            </label>
+            <label for="pages">
+              number of pages: <input type="number" name="pages" id="pages">
+            </label>
+            <label for="isRead">
+              <span>Have you read it yet?</span>
+              Yes <input type="radio" name="isRead" id="yesRead">
+              No <input type="radio" name="isRead" id="noRead">
+            </label>
+            <button type="submit">add to library</button>
+          </form>
+        </div>
+      </div>
+      <div class="books-container">
+        
+      </div>
+    </main>
+    <footer>
+      <span>Made using vanilla JS & CSS grid!</span>
+      <span class="copyright">Copyright&copy; 2022 | Austin Kindig</span>
+    </footer>
+  </body>
 </html>

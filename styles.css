@@ -1,0 +1,20 @@
+body {
+    display: grid;
+    grid-template-rows: 2fr 12fr 1fr;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(0, 132, 255);
+    grid-row: 1;
+}
+
+main {
+    background-color: aliceblue;
+    grid-row: 2;
+}
+
+footer {
+    background-color: rgb(0, 132, 255);
+}

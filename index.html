@@ -11,32 +11,54 @@
   <body>
     <header>
       <h1 class="title">Your Library Tracker</h1>
-      <p class="info">Fill out the form below and press "add to library" to catalog your books!</p>
+      <span class="info">Fill out the form below and press "add to library" to catalog your books!</>
     </header>
     <main>
       <div class="form-container">
         <div class="form-card">
           <form action="">
-            <label for="title">
-              book title:  <input type="text" name="title" id="title">
-            </label>
-            <label for="author">
-              author:  <input type="text" name="title" id="title">
-            </label>
-            <label for="pages">
-              number of pages: <input type="number" name="pages" id="pages">
-            </label>
-            <label for="isRead">
-              <span>Have you read it yet?</span>
-              Yes <input type="radio" name="isRead" id="yesRead">
-              No <input type="radio" name="isRead" id="noRead">
-            </label>
+            <div>
+              <label for="title">book title:</label>
+              <input type="text" name="title" id="title">
+            </div>
+            <div>
+              <label for="author">author:</label>
+              <input type="text" name="title" id="title">
+            </div>
+            <div>
+              <label for="pages">number of pages:</label>
+              <input type="number" name="pages" id="pages">
+            </div>
+            <div>
+              <label for="isRead">Have you read it yet?</label>
+              <div class="radio">
+                Yes <input type="radio" name="isRead" id="yesRead">
+                No <input type="radio" name="isRead" id="noRead">
+              </div>
+            </div>
             <button type="submit">add to library</button>
           </form>
         </div>
       </div>
       <div class="books-container">
-        
+        <div class="book-card">
+          <div class="title">
+            <span>Title:</span>
+            <span class="title"></span>
+          </div>
+          <div class="author">
+            <span>Author:</span>
+            <span class="author"></span>
+          </div>
+          <div class="pages">
+            <span>Number of Pages:</span>
+            <span class="pages"></span>
+          </div>
+          <div class="isRead">
+            <span>Have I Read it yet?</span>
+            <span class="isRead"></span>
+          </div>
+        </div>
       </div>
     </main>
     <footer>

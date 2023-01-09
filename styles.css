@@ -27,7 +27,7 @@ main {
     display: grid;
     grid-template-rows: 1fr 4fr;
 }
-
+/*user input styles*/
 .form-container {
     grid-row: 1;
     display: grid;
@@ -73,9 +73,20 @@ form button {
     width: 50%;
     justify-self: center;
 }
-
+/*library container styles*/
 .books-container {
     grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    gap: 25px;
+}
+
+.book-card {
+    background-color: aqua;
+    height: clamp(25%, 50px, 75%);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
 }
 
 /*set styles for footer section*/

@@ -1,9 +1,18 @@
 // const { doc } = require("prettier");
+const form = document.querySelector('form')
 
+const book1 = form.addEventListener('submit', callbackFunction)
+function callbackFunction (e) {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    const formObject = Object.fromEntries(formData.entries())
+    console.log(formObject)
+    return formObject
 
+}
 
 // dummy books
-const book1 = {
+const booko1 = {
     title: "title_1",
     author: "author_1",
     pages: "pages_1",
@@ -19,6 +28,7 @@ const book2 = {
 
 // book object storage
 const myLibrary = [
+    book1
 ]
 
 for(let i = myLibrary.length; i > 0; i--) {

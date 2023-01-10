@@ -25,7 +25,7 @@ const myLibrary = []
 
 
 // object constructor function
-function book(input) {
+function book() {
     this.title
     this.author
     this.pages

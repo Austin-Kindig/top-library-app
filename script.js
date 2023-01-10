@@ -1,62 +1,46 @@
-// const { doc } = require("prettier");
-const form = document.querySelector('form')
+// add a book delete button
+// add a book is read button
 
-const book1 = form.addEventListener('submit', callbackFunction)
-function callbackFunction (e) {
+document.addEventListener('submit', (e) => {
     e.preventDefault()
-    const formData = new FormData(e.target)
-    const formObject = Object.fromEntries(formData.entries())
-    console.log(formObject)
-    return formObject
+    let input = new FormData(document.querySelector('form'))
+    input = Object.fromEntries(input)
+    input.isRead === 'on' ? input.isRead = 'yes' : input.isRead = 'no'
+    document.querySelector('form').reset()
+    myLibrary.push(input)
+    for(let i = myLibrary.length; i > 0; i--) {
 
-}
+        document.querySelector('.books-container').appendChild(extractBooks(i - 1, myLibrary[i - 1]))
+    
+    }
 
-// dummy books
-const booko1 = {
-    title: "title_1",
-    author: "author_1",
-    pages: "pages_1",
-    isRead: "Yes"
-}
+})
 
-const book2 = {
-    title: "title_2",
-    author: "author_2",
-    pages: "pages_2",
-    isRead: "No"
-}
-
-// book object storage
-const myLibrary = [
-    book1
-]
-
-for(let i = myLibrary.length; i > 0; i--) {
-
-    document.querySelector('.books-container').appendChild(extractBooks(i - 1, myLibrary[i - 1]))
-
-}
+// initialize book object storage
+const myLibrary = []
 
 
 // object constructor function
-function book(title, author, pages, isRead) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.isRead = isRead
+function book(input) {
+    this.title
+    this.author
+    this.pages
+    this.isRead
 }
 
 // adds book object to myLibrary array
 function addBookToLibrary() {
 
 }
-// appends multiple DOM elements in one package
+// converts book objects into DOM lists
 function extractBooks (index, book) {
     const cardDiv = createDiv('book-card', index + 1, '')
     cardDiv.appendChild(createDiv('title', null, `Title: ${book.title}`))
     cardDiv.appendChild(createDiv('author', null, `Author: ${book.author}`))
     cardDiv.appendChild(createDiv('pages', null, `Number of pages: ${book.pages}`))
     cardDiv.appendChild(createDiv('isRead', null, `Have I read it yet? ${book.isRead}`))
+    cardDiv.appendChild(createButton('change-isRead-button', null, 'Finished Book'))
+    cardDiv.appendChild(createButton('remove-book-button', `remove-button-${index + 1}`, 'Remove Book'))
     return cardDiv
 }
 
@@ -69,3 +53,10 @@ function createDiv (className, id, text) {
     return newElement
 }
 
+function createButton (className, id, text) {
+    const newElement = document.createElement('button')
+    newElement.setAttribute('id', id)
+    newElement.setAttribute('class', className)
+    newElement.innerText = text
+    return newElement
+}

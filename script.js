@@ -1,8 +1,22 @@
 // clean up some fucntions and separate jobs/refactor
 // add a book delete button
+
+
+
 // add a book is read button
 const bookShelf = document.querySelector('.books-container')
 const books = document.querySelectorAll('.book-card')
+
+document.addEventListener('click', removeBookButtonListener)
+
+function removeBookButtonListener (event) {
+    const button = event.target
+    if (button.tagName === 'BUTTON' && button.classList.contains('remove-button')) {
+        myLibrary.splice(button.id, 1)
+        button.parentNode.remove()
+        refreshDisplay()
+    }
+}
 
 document.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -15,11 +29,6 @@ document.addEventListener('submit', (e) => {
 
 })
 
-books.forEach((book) =>
-  book.addEventListener("click", () => {
-    bookShelf.removeChild(bookShelf.querySelector())
-  })
-);
 // initialize book object storage
 const myLibrary = []
 
@@ -44,7 +53,7 @@ function extractBooks (index, book) {
     cardDiv.appendChild(createDiv('pages', null, `Number of pages: ${book.pages}`))
     cardDiv.appendChild(createDiv('isRead', null, `Have I read it yet? ${book.isRead}`))
     cardDiv.appendChild(createButton('change-isRead-button', null, 'Finished Book'))
-    cardDiv.appendChild(createButton('remove-book-button', index + 1, 'Remove Book'))
+    cardDiv.appendChild(createButton('remove-button', index, 'Remove Book'))
     return cardDiv
 }
 

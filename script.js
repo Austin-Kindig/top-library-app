@@ -1,11 +1,20 @@
-// clean up some fucntions and separate jobs/refactor
-// add a book delete button
+// clean up some functions and separate jobs/refactor
 
-
-
-// add a book is read button
 const bookShelf = document.querySelector('.books-container')
-const books = document.querySelectorAll('.book-card')
+
+
+document.addEventListener('click', changeIsRead) 
+
+function changeIsRead (event) {
+    const button = event.target
+    if (button.tagName === 'BUTTON' && button.classList.contains('isRead-button')) {
+        myLibrary[button.nextSibling.id].isRead = 'yes'
+        button.parentNode.remove()
+        refreshDisplay()
+    }
+}
+
+
 
 document.addEventListener('click', removeBookButtonListener)
 
@@ -52,7 +61,7 @@ function extractBooks (index, book) {
     cardDiv.appendChild(createDiv('author', null, `Author: ${book.author}`))
     cardDiv.appendChild(createDiv('pages', null, `Number of pages: ${book.pages}`))
     cardDiv.appendChild(createDiv('isRead', null, `Have I read it yet? ${book.isRead}`))
-    cardDiv.appendChild(createButton('change-isRead-button', null, 'Finished Book'))
+    cardDiv.appendChild(createButton('isRead-button', null, 'Finished Book'))
     cardDiv.appendChild(createButton('remove-button', index, 'Remove Book'))
     return cardDiv
 }

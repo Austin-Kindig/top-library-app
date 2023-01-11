@@ -1,3 +1,7 @@
+* {
+    color: #ff5733
+}
+
 body {
     display: grid;
     grid-template-rows: 2fr 12fr 1fr;
@@ -7,7 +11,7 @@ body {
 
 /*set styles for header section*/
 header {
-    background-color: rgb(0, 132, 255);
+    background-color: #c70039;
     grid-row: 1;
     display: grid;
     align-content: center;
@@ -22,7 +26,7 @@ header {
 
 /*set styles for main section*/
 main {
-    background-color: aliceblue;
+    background-color: #581845;
     grid-row: 2;
     display: grid;
     grid-template-rows: 1fr 4fr;
@@ -36,7 +40,7 @@ main {
 
 .form-card {
     grid-column: 2;
-    background-color: gold;
+    background-color: #900c3f;
     border-radius: 15px;
     margin: 10px;
     padding: 15px;
@@ -82,7 +86,7 @@ form button {
 }
 
 .book-card {
-    background-color: aqua;
+    background-color: #ffc305;
     height: clamp(25%, 50px, 75%);
     border-radius: 15px;
     padding: 15px;
@@ -91,7 +95,7 @@ form button {
 
 /*set styles for footer section*/
 footer {
-    background-color: rgb(0, 132, 255);
+    background-color: #c70039;
     grid-row: 3;
     display: grid;
     align-content: center;
